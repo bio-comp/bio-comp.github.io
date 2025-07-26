@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - {{ config.title }}{% endblock title %}
+
+{% block content %}
+<section class="projects">
+    <div class="container">
+        <h1>{{ section.title }}</h1>
+        <div class="project-grid">
+            {% for page in section.pages %}
+            <div class="project">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>{{ page.title }}</h3>
+                    <p>{{ page.description | default(value="") }}</p>
+                    <a href="{{ page.permalink | safe }}">View Project →</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

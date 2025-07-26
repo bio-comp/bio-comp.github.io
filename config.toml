@@ -1,0 +1,28 @@
+# Zola configuration for Mike Hamilton's portfolio
+
+base_url = "https://bio-comp.github.io"
+title = "Mike Hamilton - Data Engineering & AI/ML Specialist"
+description = "Portfolio of Mike Hamilton - Data Engineering, AI/ML, Bioinformatics, and Cloud Architecture"
+default_language = "en"
+compile_sass = true
+build_search_index = false
+generate_feed = true
+hard_link_static = true
+
+[markdown]
+highlight_code = true
+highlight_theme = "base16-ocean-dark"
+
+[extra]
+author = "Mike Hamilton"
+email = "mike.hamilton7@gmail.com"
+github = "bio-comp"
+linkedin = "mikehamilton"
+
+# Site sections
+specializations = [
+    { name = "Data Engineering", icon = "database", description = "Building scalable data pipelines and architectures" },
+    { name = "AI/ML", icon = "brain", description = "Machine learning and artificial intelligence solutions" },
+    { name = "Bioinformatics", icon = "dna", description = "Computational biology and genomics analysis" },
+    { name = "Cloud Architecture", icon = "cloud", description = "Designing and implementing cloud-native solutions" }
+]

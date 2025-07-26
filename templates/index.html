@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="home" class="hero">
+    <h1>{{ config.extra.author }}</h1>
+    <p>{{ section.content | safe }}</p>
+    <div class="cta">
+        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        <a href="https://github.com/{{ config.extra.github }}" class="btn btn-secondary" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+    </div>
+</section>
+
+<section id="specializations" class="specializations">
+    <div class="container">
+        <h2>Areas of Expertise</h2>
+        <div class="grid">
+            {% for spec in config.extra.specializations %}
+            <div class="card">
+                <div class="icon">
+                    {% if spec.icon == "database" %}
+                        <i class="fas fa-database"></i>
+                    {% elif spec.icon == "brain" %}
+                        <i class="fas fa-brain"></i>
+                    {% elif spec.icon == "dna" %}
+                        <i class="fas fa-dna"></i>
+                    {% elif spec.icon == "cloud" %}
+                        <i class="fas fa-cloud"></i>
+                    {% endif %}
+                </div>
+                <h3>{{ spec.name }}</h3>
+                <p>{{ spec.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="projects">
+    <div class="container">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>ML Pipeline Orchestration</h3>
+                    <p>Scalable machine learning pipeline for processing genomic data using Apache Airflow and Kubernetes.</p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>Kubernetes</span>
+                        <span>Airflow</span>
+                        <span>TensorFlow</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Bioinformatics Analysis Platform</h3>
+                    <p>Cloud-native platform for analyzing and visualizing large-scale genomic datasets.</p>
+                    <div class="tech-stack">
+                        <span>Rust</span>
+                        <span>AWS</span>
+                        <span>PostgreSQL</span>
+                        <span>React</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Real-time Data Processing</h3>
+                    <p>Stream processing system for real-time analytics on biological sensor data.</p>
+                    <div class="tech-stack">
+                        <span>Apache Kafka</span>
+                        <span>Spark</span>
+                        <span>Scala</span>
+                        <span>Cassandra</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Let's Connect</h2>
+    <p>I'm always interested in discussing new opportunities and challenging projects.</p>
+    <div class="contact-links">
+        <a href="mailto:{{ config.extra.email }}">
+            <i class="fas fa-envelope"></i> Email Me
+        </a>
+        <a href="https://github.com/{{ config.extra.github }}" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://linkedin.com/in/{{ config.extra.linkedin }}" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+    </div>
+</section>
+{% endblock content %}
